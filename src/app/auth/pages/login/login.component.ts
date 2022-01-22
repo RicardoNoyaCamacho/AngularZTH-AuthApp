@@ -17,6 +17,8 @@ export class LoginComponent {
     password: ['123456', [Validators.required, Validators.minLength(6)]],
   });
 
+  loading: boolean = false;
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -24,17 +26,18 @@ export class LoginComponent {
   ) {}
 
   login() {
-
     const { email, password } = this.miFormulario.value;
+    this.loading = true;
 
     this.authService.login(email, password).subscribe((ok) => {
       if (ok === true) {
+        this.loading = false;
         this.router.navigateByUrl('dashboard');
       } else {
         //TODO mostrar mensaje de error
+        this.loading = false;
         Swal.fire('Error', ok, 'error');
       }
     });
-
   }
 }
