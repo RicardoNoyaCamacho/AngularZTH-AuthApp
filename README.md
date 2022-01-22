@@ -5,7 +5,7 @@ Ejemplo de una autenticación en Angular
 Puedes verla en :
 
 ```
-https://ricardonoyacamacho.github.io/AngularZTH-AuthApp/
+https://mean-angular-node-auth.herokuapp.com/auth/login
 ```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
